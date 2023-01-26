@@ -1,0 +1,12 @@
+.item {
+	font-size: 1rem;
+	font-family: 'Lora', serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #4e1e4a;
+	border: 4px inset #b178ad;
+	border-radius: 25px;
+	background-color: bisque;
+	padding: 5px 15px;
+	margin: 5px;
+}

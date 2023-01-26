@@ -1,0 +1,61 @@
+body {
+  font-size: 1em;
+  margin: 0;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #4e1e4a;
+  background: -webkit-gradient(linear, left bottom, left top, from(bisque), color-stop(70%, #ffb1da));
+  background: linear-gradient(to top, bisque, #ffb1da 70%);
+  height: 100vh;
+  text-align: center;
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Lora', serif;
+  font-size: inherit;
+  margin: 15px;
+}
+
+.input input {
+  position: relative;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 1rem;
+  margin-right: 10px;
+  padding: 10px;
+  border: 4px inset #b178ad;
+  border-radius: 15px;
+}
+
+.input button {
+  font-size: 1rem;
+  font-family: inherit;
+  font-style: italic;
+  color: #4e1e4a;
+  border: 4px inset #b178ad;
+  border-radius: 25px;
+  background-color: bisque;
+  padding: 8px;
+}
+
+input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: grey;
+}
+
+button:hover {
+  -webkit-box-shadow: 2px 2px 2px inset #c2a685;
+          box-shadow: 2px 2px 2px inset #c2a685;
+}
+/*# sourceMappingURL=style.css.map */

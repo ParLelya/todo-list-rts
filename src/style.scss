@@ -1,0 +1,50 @@
+body {
+	font-size: 1em;
+	margin: 0;
+ 	font-family: 'Lora', serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #4e1e4a;
+	background: linear-gradient(to top, bisque, rgb(255, 177, 218) 70%);
+	height: 100vh;
+	text-align: center;
+}
+
+.input {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Lora', serif;
+	font-size: inherit;
+	margin: 15px;
+
+	input {
+		position: relative;
+  		align-self: center;
+		font-size: 1rem;
+		margin-right: 10px;
+		padding: 10px;
+		border: 4px inset #b178ad;
+		border-radius: 15px;
+	}
+
+	button {
+		font-size: 1rem;
+		font-family: inherit;
+		font-style: italic;
+		color: #4e1e4a;
+		border: 4px inset #b178ad;
+		border-radius: 25px;
+		background-color: bisque;
+		padding: 8px;
+	}
+}
+
+input[type="checkbox"]:checked + span {
+	text-decoration: line-through;
+	color: grey;
+}
+
+button:hover {
+	box-shadow: 2px 2px 2px inset rgb(194, 166, 133);
+}

@@ -1,6 +1,7 @@
 import React from 'react'
-import TodoItem from './TodoItem'
-import { ITodo } from "../types/data"
+import TodoItem from '../Item/TodoItem'
+import { ITodo } from "../../types/data"
+import classes from './TodoList.module.css' 
 
 interface ITodoListProps {
 	items: ITodo[]
@@ -12,11 +13,11 @@ const TodoList: React.FC<ITodoListProps> = (props) => {
 	const { items, toggleTodo, removeTodo } = props
 
 	return (
-		<div>
-			{items.map(todo => 
-				<TodoItem 
-					key={todo.id} 
-					{...todo} 
+		<div className={classes.list}>
+			{items.map(todo =>
+				<TodoItem
+					key={todo.id}
+					{...todo}
 					toggleTodo={toggleTodo}
 					removeTodo={removeTodo}
 				/>)}
