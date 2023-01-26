@@ -1,32 +1,36 @@
 import { useState, useEffect, useRef } from "react"
 import { ITodo } from "../types/data"
+import TodoList from "./TodoList";
+import Input from "./Input";
 
 const App: React.FC = () => {
-	const [value, setValue] = useState('');
+	
 	const [todos, setTodos] = useState<ITodo[]>([]);
-	const addTodo = () => {
-		if (value) {
-			setTodos([...todos, {
-				id: Date.now(),
-				title: value,
-				complete: false,
-			}])
-			setValue('')
-		}
-	};
-	//TODO вынести инпут и кнопку в отдельную компоненту
-	return <div>
+
+	const removeTodo = (id: number): void => {
+		setTodos(todos.filter(todo => todo.id !== id))
+	}
+
+	const toggleTodo = (id: number): void => {
+		setTodos(todos.map(todo => {
+			if (todo.id !== id) return todo
+			return {
+				...todo,
+				complete: !todo.complete
+			}
+		}))
+	}
+
+	return (
 		<div>
-			<input
-				value={value}
-				onChange={e => setValue(e.target.value)}
+			<Input/>
+			<TodoList
+				items={todos}
+				removeTodo={removeTodo}
+				toggleTodo={toggleTodo}
 			/>
-			<button
-				onClick={addTodo}>
-				Добавить
-			</button>
 		</div>
-	</div>
+	)
 }
 
 export { App }
