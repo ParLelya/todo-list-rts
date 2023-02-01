@@ -10,3 +10,16 @@
 	padding: 5px 15px;
 	margin: 5px;
 }
+
+.btn {
+	background: transparent;
+	border: 2px solid red;
+	border-radius: 100%;
+	outline: none;
+	padding: 0px;
+	margin: 5px;
+	height: 20px;
+	width: 20px;
+	color: red;
+	font-weight: '800';
+}

@@ -10,36 +10,6 @@ body {
 	text-align: center;
 }
 
-.input {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Lora', serif;
-	font-size: inherit;
-	margin: 15px;
-
-	input {
-		position: relative;
-  		align-self: center;
-		font-size: 1rem;
-		margin-right: 10px;
-		padding: 10px;
-		border: 4px inset #b178ad;
-		border-radius: 15px;
-	}
-
-	button {
-		font-size: 1rem;
-		font-family: inherit;
-		font-style: italic;
-		color: #4e1e4a;
-		border: 4px inset #b178ad;
-		border-radius: 25px;
-		background-color: bisque;
-		padding: 8px;
-	}
-}
-
 input[type="checkbox"]:checked + span {
 	text-decoration: line-through;
 	color: grey;
