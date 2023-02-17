@@ -2,7 +2,7 @@ import { useState } from "react"
 import { ITodo } from "../types/data"
 import TodoList from "./List/TodoList";
 import Input from "./Input/Input";
-import '../style.css'
+import '../css/style.css'
 
 const App: React.FC = () => {
 	const [value, setValue] = useState('');

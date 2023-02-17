@@ -1,0 +1,20 @@
+body {
+  font-size: 1em;
+  margin: 0;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-style: italic;
+  color: #4e1e4a;
+  background: linear-gradient(to top, bisque, rgb(255, 177, 218) 70%);
+  height: 100vh;
+  text-align: center;
+}
+
+input[type=checkbox]:checked + span {
+  text-decoration: line-through;
+  color: grey;
+}
+
+button:hover {
+  box-shadow: 2px 2px 2px inset rgb(194, 166, 133);
+}/*# sourceMappingURL=style.css.map */
