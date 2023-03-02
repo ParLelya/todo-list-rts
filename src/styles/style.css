@@ -17,4 +17,5 @@ input[type=checkbox]:checked + span {
 
 button:hover {
   box-shadow: 2px 2px 2px inset rgb(194, 166, 133);
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
