@@ -1,19 +1,20 @@
 import React from 'react'
 import TodoItem from '../Item/TodoItem'
-import { ITodoListProps } from "../../types/data"
 import classes from './TodoList.module.css' 
+import { useAppSelector } from '../../redux/hooks/hooks'
+import { RootState } from '../../redux/store/store'
+import { ITodo } from '../../types/data'
 
-const TodoList: React.FC<ITodoListProps> = (props) => {
-	const { items, toggleTodo, removeTodo } = props
+const TodoList: React.FC = () => {
+
+	const {todos} = useAppSelector((state: RootState) => state.todos)
 
 	return (
 		<div className={classes.list}>
-			{items.map(todo =>
+			{todos.map((todo: ITodo) =>
 				<TodoItem
 					key={todo.id}
 					{...todo}
-					toggleTodo={toggleTodo}
-					removeTodo={removeTodo}
 				/>)}
 		</div>
 	)

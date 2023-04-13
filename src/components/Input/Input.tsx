@@ -1,32 +1,31 @@
-import React, { useEffect, useRef } from 'react'
-import { IInputProps } from '../../types/data'
+import React, { useEffect, useRef, useState } from 'react'
 import classes from './Input.module.css'
+import { useAppDispatch } from '../../redux/hooks/hooks';
+import { addTodo } from '../../redux/slices/todoSlice';
 
-const Input: React.FC<IInputProps> = (props) => {
-	const { value, setValue, todos, setTodos } = props
+const Input: React.FC = () => {
+	const dispatch = useAppDispatch()
+	const [value, setValue] = useState('');
+
 	const inputRef = useRef<HTMLInputElement>(null)
 
 	useEffect(() => {
 		inputRef.current?.focus()
 	}, [])
 
-	const addTodo = () => {
-		if (value) {
-			setTodos([...todos, {
-				id: Date.now(),
-				title: value,
-				complete: false,
-			}])
-			setValue('')
-		}
-	};
-
 	const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 		setValue(e.target.value)
 	}
 
+	const addTodoItem = () => {
+		if (value) {
+			dispatch(addTodo(value))
+			setValue('')
+		}
+	};
+
 	const handleKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
-		if (e.key === 'Enter') addTodo()
+		if (value && e.key === 'Enter') dispatch(addTodo(value))
 	}
 
 	return (
@@ -38,7 +37,7 @@ const Input: React.FC<IInputProps> = (props) => {
 				onKeyDown={handleKeyDown}
 				ref={inputRef}
 			/>
-			<button className={classes.btn} onClick={addTodo}>
+			<button className={classes.btn} onClick={addTodoItem}>
 				Добавить
 			</button>
 		</div>
